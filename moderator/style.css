@@ -1,0 +1,158 @@
+/* style.css for かろearth非公式ホームページ */
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #6c63ff;
+  --accent-2: #00b894;
+  --border: #e6e9ef;
+  --radius: 14px;
+}
+
+/* Reset-ish */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #eef2ff 120px);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+  padding:28px 16px;
+}
+
+/* Center content and limit width */
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+h1{
+  font-size:clamp(1.6rem, 2.6vw, 2.25rem);
+  margin:0 0 8px 0;
+  letter-spacing:-0.02em;
+}
+
+p.lead{
+  margin:0 0 22px 0;
+  color:var(--muted);
+}
+
+/* make the list look like cards */
+ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:16px;
+}
+
+section.group{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:0 6px 18px rgba(20,24,40,0.04);
+}
+
+/* headings inside the list */
+h2, h3{
+  margin:0 0 12px 0;
+  font-weight:700;
+}
+
+/* each person row */
+.person{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:10px 8px;
+  border-radius:10px;
+  transition:transform .14s ease, box-shadow .14s ease;
+}
+.person:not(:last-child){
+  border-bottom:1px dashed var(--border);
+}
+.person:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(15,23,42,0.06);
+}
+
+/* avatar placeholder */
+.person__avatar{
+  width:56px;
+  height:56px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:700;
+  flex-shrink:0;
+  font-size:0.95rem;
+}
+
+.person__content{
+  flex:1;
+}
+.person__title{
+  margin:0;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-weight:700;
+}
+.person__handle{
+  font-size:0.92rem;
+  color:var(--accent);
+  font-weight:600;
+}
+.person__desc{
+  margin:6px 0 0 0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* meta list styles for different roles */
+.role-badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(108,99,255,0.12);
+  color:var(--accent);
+  font-weight:700;
+  font-size:0.8rem;
+}
+
+/* small screens adjustments */
+@media (max-width:520px){
+  .person{gap:10px}
+  .person__avatar{width:48px;height:48px;font-size:0.85rem}
+}
+
+/* utility to make the existing HTML structure look nicer even without wrappers */
+body > h1, body > p{max-width:900px;margin-left:auto;margin-right:auto}
+
+/* style for the unordered list wrapper contained in the user's markup */
+ul > h2, ul > h3{margin:0 0 8px 0}
+
+/* target direct children li and p inside ul to adopt card rows */
+ul > li{display:block}
+ul > li + p{margin-top:6px;margin-bottom:10px;color:var(--muted)}
+
+/* Improve semantics where headings are inside ul (user's HTML) */
+ul{
+  padding:18px;
+  background:transparent;
+}
+
+/* Add small footer note */
+footer{
+  margin-top:22px;
+  color:var(--muted);
+  font-size:0.9rem;
+  text-align:center;
+}
