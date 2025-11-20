@@ -1,39 +1,265 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" href="https://content.lifeistech-lesson.jp/Curriculum_materials/Original/global.css" type="text/css">
-        <link rel="stylesheet" href="style.css" type="text/css">
-        <script src="initialize.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="https://images-ext-1.discordapp.net/external/9IfhJE7eZrg4ZajZRC0TwE4ZB_BCp7RAEtmeyRSzm8I/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1143889794754154637/1a54bd4c427e3654ac8a3c330786082b.png?width=943&height=943">
-        <title>かろearth非公式ホームページ</title>
+    <title>かろEarth非公式ホームページ</title>
+    <link rel="icon" href="https://images-ext-1.discordapp.net/external/9IfhJE7eZrg4ZajZRC0TwE4ZB_BCp7RAEtmeyRSzm8I/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1143889794754154637/1a54bd4c427e3654ac8a3c330786082b.png?width=943&height=943">
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="かろEarth非公式ホームページ" />
-        <meta property="og:description" content="かろEarth" />
-        <meta property="og:url" content="https://momijidaaa.github.io/karohp/" />
-        <meta property="og:type" content="website" />
-    </head>
-    <body>
-        <div id="menuButton">☰</div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://content.lifeistech-lesson.jp/Curriculum_materials/Original/global.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Scripts -->
+    <script src="initialize.js"></script>
+
+    <!-- OGP -->
+    <meta property="og:title" content="かろEarth非公式ホームページ" />
+    <meta property="og:description" content="かろEarth" />
+    <meta property="og:url" content="https://momijidaaa.github.io/karohp/" />
+    <meta property="og:type" content="website" />
+</head>
+
+<body>
+    <header>
+        <div id="menuButton"></div>
+
         <div id="sideMenu">
             <ul>
                 <li><a href="https://momijidaaa.github.io/karohp/">ホーム</a></li>
                 <li><a href="country/">国家について</a></li>
                 <li><a href="server/">サーバーについて</a></li>
+
+                <li id="expanded-list">
+                    <p>かろEarth</p>
+                    <ul>
+                        <li><a href="https://earth.karon.jp/">公式サイト</a></li>
+                        <li><a href="https://map.karon.jp/">リアルタイムマップ</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
+    </header>
 
+    <div class="homepage-top">
+        <h1>
+            地球が舞台。<br>
+            国家が未来を創り出す。
+        </h1>
+        <p>Minecraft Bedrock Edition 専用 建国型MMOサーバー「KaroEarth」</p>
+    </div>
+
+    <section>
         <h1>かろEarthとは</h1>
         <p>かろEarthとは、かろんが運営してるEarthサーバーです(簡潔)</p>
+    </section>
+
+    <section>
+        <h2>かろEarth特徴</h2>
         <ul>
-            <h2>かろEarth特徴</h2>
             <li>建国が誰でもできる</li>
             <li>全機種対応</li>
             <li>初心者に優しい</li>
         </ul>
+    </section>
+
     <script src="https://momijidaaa.github.io/karohp/menu.js"></script>
-    </body>
+
+    <style>
+        body {
+            margin: 0;
+            padding-top: 80px;
+            font-family: sans-serif;
+            background-image:
+                linear-gradient(to bottom,
+                    transparent
+                    #5a5959 50%,
+                    #05b0bd60 80%,
+                    transparent
+                );
+            background-color: #a7ffec;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #464646;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            list-style: none;
+        }
+
+        .homepage-top {
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .homepage-top h1 {
+            font-size: 3.8rem;
+        }
+
+        .homepage-top p {
+            font-size: 1.2rem;
+        }
+
+        #menuButton {
+            display: none;
+        }
+
+        #sideMenu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #sideMenu li {
+            font-size: 1.2em;
+            list-style: none;
+        }
+
+        #sideMenu a {
+            color: #4b4b4b;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            transition: color 0.3s ease;
+        }
+
+        #sideMenu a:hover {
+            color: #ffd86b;
+        }
+
+        #expanded-list p:hover {
+            color: #ffd86b;
+        }
+
+        #expanded-list {
+            position: relative;
+        }
+
+        #expanded-list ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
+            list-style: none;
+            margin: 0;
+            padding: 8px 0;
+            display: none;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-radius: 6px;
+            z-index: 1200;
+        }
+
+        #expanded-list ul li {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        #expanded-list ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        #expanded-list ul li a:hover {
+            background: rgba(255, 216, 107, 0.2);
+            color: #ffd86b;
+        }
+
+        #expanded-list:hover ul {
+            display: block;
+        }
+
+        /* --- Mobile --- */
+        @media (max-aspect-ratio: 3/4), (orientation: portrait) {
+            #menuButton {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                background: #2b2b2b28;
+                color: #fff;
+                font-size: 32px;
+                border-radius: 12px;
+                cursor: pointer;
+                z-index: 1100;
+                margin-right: auto;
+            }
+
+            #menuButton:hover {
+                background: #9c9c9c2a;
+            }
+
+            #sideMenu {
+                position: fixed;
+                top: 80px;
+                left: -260px;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.95);
+                width: 260px;
+                height: 100%;
+                padding-top: 20px;
+                transition: left 0.4s ease;
+            }
+
+            #sideMenu ul {
+                gap: 32px;
+            }
+
+            #sideMenu li {
+                font-size: 15px;
+                margin: 0 auto;
+                padding: 8px 50px;
+                border-radius: 30px;
+                text-align: center;
+            }
+
+            #sideMenu.open {
+                left: 0;
+            }
+        }
+
+        /* --- Desktop --- */
+        @media (min-aspect-ratio: 4/3), (orientation: landscape) {
+            #menuButton {
+                display: none;
+            }
+
+            #sideMenu {
+                position: fixed;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 8px 16px;
+                z-index: 1000;
+            }
+
+            #sideMenu ul {
+                display: flex;
+                gap: 32px;
+            }
+
+            #sideMenu li {
+                font-size: 15px;
+                padding: 4px 30px;
+            }
+        }
+    </style>
+</body>
 </html>
