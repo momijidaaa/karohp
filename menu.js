@@ -10,3 +10,12 @@ document.addEventListener("click", (e) => {
         sideMenu.classList.remove("open");
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const exp = document.getElementById("expanded-list");
+
+    exp.addEventListener("click", () => {
+        exp.querySelector("ul").style.display =
+            exp.querySelector("ul").style.display === "block" ? "none" : "block";
+    });
+});

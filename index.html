@@ -23,16 +23,22 @@
 
 <body>
     <header>
-        <div id="menuButton"></div>
+        <div id="menuButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-6 w-6 text-gray-800" aria-hidden="true">
+                <path d="M1 5h20"></path>
+                <path d="M1 12h20"></path>
+                <path d="M1 19h13"></path>
+            </svg>
+        </div>
 
         <div id="sideMenu">
             <ul>
-                <li><a href="https://momijidaaa.github.io/karohp/">ホーム</a></li>
-                <li><a href="country/">国家について</a></li>
-                <li><a href="server/">サーバーについて</a></li>
+                <li><a href="https://momijidaaa.github.io/karohp/"><p>ホーム</p></a></li>
+                <li><a href="country/"><p>国家について</p></a></li>
+                <li><a href="server/"><p>サーバーについて</p></a></li>
 
                 <li id="expanded-list">
-                    <p>かろEarth</p>
+                    <a><p>かろEarth</p></a>
                     <ul>
                         <li><a href="https://earth.karon.jp/">公式サイト</a></li>
                         <li><a href="https://map.karon.jp/">リアルタイムマップ</a></li>
@@ -73,7 +79,7 @@
             font-family: sans-serif;
             background-image:
                 linear-gradient(to bottom,
-                    transparent
+                    transparent,
                     #5a5959 50%,
                     #05b0bd60 80%,
                     transparent
@@ -119,36 +125,58 @@
         }
 
         #sideMenu {
-            display: flex;
-            gap: 32px;
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
-        #sideMenu li {
-            font-size: 1.2em;
-            list-style: none;
+        #sideMenu > ul {
+            gap: 32px;
         }
 
-        #sideMenu a {
-            color: #4b4b4b;
+        #sideMenu li {
+            list-style: none;
+            font-size: 1.2em;
+        }
+
+        #sideMenu > ul > li > a {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 12px;
             text-decoration: none;
+            color: #4b4b4b;
             font-weight: 500;
-            padding: 8px 12px;
             transition: color 0.3s ease;
         }
 
-        #sideMenu a:hover {
+        #sideMenu > ul > li > a:hover {
             color: #ffd86b;
         }
 
-        #expanded-list p:hover {
-            color: #ffd86b;
+        #sideMenu p {
+            margin: 0;
+            padding: 0;
         }
 
         #expanded-list {
             position: relative;
+        }
+
+        #expanded-list > a {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 12px;
+            text-decoration: none;
+            color: #4b4b4b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        #expanded-list > a:hover {
+            color: #ffd86b;
         }
 
         #expanded-list ul {
@@ -172,9 +200,10 @@
         }
 
         #expanded-list ul li a {
-            color: #fff;
+            color: #4b4b4b;
             text-decoration: none;
             display: block;
+            padding: 6px 12px;
         }
 
         #expanded-list ul li a:hover {
@@ -186,7 +215,6 @@
             display: block;
         }
 
-        /* --- Mobile --- */
         @media (max-aspect-ratio: 3/4), (orientation: portrait) {
             #menuButton {
                 display: flex;
@@ -236,13 +264,13 @@
             }
         }
 
-        /* --- Desktop --- */
         @media (min-aspect-ratio: 4/3), (orientation: landscape) {
             #menuButton {
                 display: none;
             }
 
             #sideMenu {
+                display: flex;
                 position: fixed;
                 width: 100%;
                 background: rgba(255, 255, 255, 0.95);
@@ -250,7 +278,7 @@
                 z-index: 1000;
             }
 
-            #sideMenu ul {
+            #sideMenu > ul {
                 display: flex;
                 gap: 32px;
             }
