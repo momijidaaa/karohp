@@ -38,8 +38,8 @@ header {
 }
 
 .homepage-top h1 {
-    font-size: 3.8rem;
-    background: linear-gradient(90deg, #0fc8e9, #7700bb, #ff1cff);
+    font-size: 4.8rem;
+    background: linear-gradient(60deg, #0fc8e9, #7700bb, #ff1cff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -145,7 +145,48 @@ header {
     display: block;
 }
 
+.description {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.description h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    background: linear-gradient(60deg, #bbf5ff, #7700bb, #707070);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.description h2 {
+    text-align: center;
+    font-size: 2.1rem;
+    background: linear-gradient(60deg, #bbf5ff, #7700bb, #707070);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.description p,
+.description li {
+    font-size: 1.1rem;
+}
+
 @media (max-aspect-ratio: 3/4), (orientation: portrait) {
+    .homepage-top h1 {
+        font-size: 2rem;
+        background: linear-gradient(60deg, #0fc8e9, #7700bb, #ff1cff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+
     #menuButton {
         display: flex;
         align-items: center;
