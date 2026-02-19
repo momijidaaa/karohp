@@ -232,6 +232,7 @@ header {
 
     #sideMenu.open {
         left: 0;
+        scroll-behavior: auto;
     }
 }
 
